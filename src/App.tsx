@@ -308,6 +308,20 @@ export default function App() {
 
       {/* Header */}
       <header className="relative pt-12 pb-8 px-4 text-center">
+        {/* ALERTA FECHA LÍMITE */}
+        <div className="relative max-w-4xl mx-auto mb-6">
+          <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 flex items-center gap-4 animate-pulse">
+            <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+            <div className="text-left">
+              <h3 className="text-red-400 font-bold text-sm">⚠️ FECHA LÍMITE DE INSCRIPCIONES</h3>
+              <p className="text-red-300 text-xs mt-1">
+                Las inscripciones cierran el <strong>miércoles 2 de abril de 2026</strong>. 
+                Después de esta fecha no se aceptarán más inscripciones.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="relative inline-flex justify-center w-full mb-8">
           <div className="absolute inset-0 flex justify-center">
             <div className="w-40 h-40 bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-amber-600/20 rounded-full blur-3xl" />
