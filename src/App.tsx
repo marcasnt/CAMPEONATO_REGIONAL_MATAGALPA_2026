@@ -305,10 +305,24 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-amber-500/30">
-      {/* Background Decor - Simplificado para Safari */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-600 rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-900 rounded-full" />
+      {/* Background Decor - Estilo Federativo FENIFISC */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Gradiente sutil profesional */}
+        <div className="absolute inset-0 bg-linear-to-br from-gray-900 via-gray-950 to-black" />
+        
+        {/* Elementos decorativos sutiles */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500/5 rounded-full" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500/3 rounded-full" />
+        
+        {/* Líneas horizontales sutiles */}
+        <div className="absolute top-1/4 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-500/10 to-transparent" />
+        <div className="absolute top-3/4 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-500/10 to-transparent" />
+        
+        {/* Esquinas decorativas */}
+        <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-amber-500/20" />
+        <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-amber-500/20" />
+        <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-amber-500/20" />
+        <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-amber-500/20" />
       </div>
 
       {/* Header */}
@@ -316,7 +330,7 @@ export default function App() {
         {/* ALERTA FECHA LÍMITE */}
         <div className="relative max-w-4xl mx-auto mb-6">
           <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 flex items-center gap-4 animate-pulse">
-            <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+            <AlertCircle className="w-6 h-6 text-red-500 shrink-0" />
             <div className="text-left">
               <h3 className="text-red-400 font-bold text-sm">⚠️ FECHA LÍMITE DE INSCRIPCIONES</h3>
               <p className="text-red-300 text-xs mt-1">
@@ -329,7 +343,7 @@ export default function App() {
 
         <div className="relative inline-flex justify-center w-full mb-8">
           <div className="absolute inset-0 flex justify-center">
-            <div className="w-40 h-40 bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-amber-600/20 rounded-full" />
+            <div className="w-40 h-40 bg-linear-to-br from-amber-400/10 via-amber-500/5 to-amber-600/10 rounded-full" />
           </div>
           <img 
             src="https://fenifisc.com/wp-content/uploads/2024/12/FENIFISC-OFICIAL.webp" 
