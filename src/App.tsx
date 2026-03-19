@@ -562,6 +562,28 @@ export default function App() {
                 Seleccionarás tu categoría definitiva el día del pesaje. Aquí puedes ver la oferta oficial:
               </p>
 
+              {/* REGLAMENTO IMPORTANTE */}
+              <div className="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 mb-8">
+                <h3 className="text-amber-400 font-bold mb-4 flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5" />
+                  REGLAMENTO OFICIAL IFBB
+                </h3>
+                <div className="space-y-3 text-sm text-amber-200/80">
+                  <p className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">•</span>
+                    <span>Esta Competencia estará regida por las reglas y reglamentos de la Federación Internacional de Fitness y Fisicoculturismo (IFBB).</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">•</span>
+                    <span>Cualquier atleta que se presente después de la hora estipulada para el pesaje, no tendrá derecho de ser pesado y pierde todo derecho de competir.</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">•</span>
+                    <span>A los atletas que se inscriben para participar en CLASSIC PHYSIQUE, se le hace de su conocimiento que el requisito para poder participar en dicha modalidad es hacer el VACIO ABDOMINAL que se les pedirá en la mesa de inscripción y pesaje, en el entendido que quienes no pueden hacer el Vacío Abdominal, pierden el derecho de participar en dicha modalidad.</span>
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-8">
                 <div>
                   <h3 className="text-amber-500 font-bold mb-4 flex items-center gap-2">
