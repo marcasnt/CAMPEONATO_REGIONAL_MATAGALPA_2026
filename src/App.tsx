@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { 
   User, 
   Dumbbell, 
@@ -52,8 +52,9 @@ const PASOS = [
 ];
 
 // ============================================================
-// UTILITIES
+// UTILITIES - OPTIMIZADAS
 // ============================================================
+
 const fileToBase64 = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -164,16 +165,16 @@ export default function App() {
     cedulaReverso: { file: null, preview: "", base64: "" },
   });
 
-  const updateField = (name: string, value: any) => {
+  const updateField = useCallback((name: string, value: any) => {
     setForm(prev => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev: any) => {
       const next = { ...prev };
       delete next[name];
       return next;
     });
-  };
+  }, [errors]);
 
-  const handlePhoto = async (name: string, file: File) => {
+  const handlePhoto = useCallback(async (name: string, file: File) => {
     if (file.size > 5 * 1024 * 1024) {
       setErrors((prev: any) => ({ ...prev, [name]: "El archivo es demasiado grande (Máx 5MB)" }));
       return;
@@ -189,7 +190,7 @@ export default function App() {
       delete next[name];
       return next;
     });
-  };
+  }, []);
 
   const validateStep = () => {
     const newErrors: any = {};
@@ -279,6 +280,10 @@ export default function App() {
              src="https://fenifisc.com/wp-content/uploads/2024/12/FENIFISC-OFICIAL.webp" 
              alt="FENIFISC" 
              className="w-20 h-20 mx-auto mb-6 rounded-full border-2 border-amber-500/40 bg-gray-800 p-1 object-contain" 
+             loading="lazy"
+             decoding="async"
+             width="80"
+             height="80"
            />
            <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20 absolute -right-10 -top-10">
              <CheckCircle className="w-10 h-10 text-white" />
@@ -331,6 +336,9 @@ export default function App() {
             alt="FENIFISC Logo" 
             className="relative w-36 h-36 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)] rounded-full border-3 border-amber-500/40 p-2 bg-gray-900/80 object-contain hover:scale-105 transition-transform duration-300" 
             loading="lazy"
+            decoding="async"
+            width="144"
+            height="144"
           />
         </div>
         <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-2">

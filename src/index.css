@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimización de rendimiento para producción */
+
+/* Preload de fuentes críticas */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+/* Optimización de animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimización de imágenes */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Scroll suave con rendimiento */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evitar reflows */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Optimización de backdrop filters */
+@media (max-width: 768px) {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Cache de recursos estáticos */
+.static-cache {
+  contain: layout style paint;
+}
