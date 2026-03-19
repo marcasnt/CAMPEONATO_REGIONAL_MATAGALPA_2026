@@ -305,10 +305,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-amber-500/30">
-      {/* Background Decor */}
+      {/* Background Decor - Simplificado para Safari */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-600 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-900 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-600 rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-900 rounded-full" />
       </div>
 
       {/* Header */}
@@ -329,12 +329,12 @@ export default function App() {
 
         <div className="relative inline-flex justify-center w-full mb-8">
           <div className="absolute inset-0 flex justify-center">
-            <div className="w-40 h-40 bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-amber-600/20 rounded-full blur-3xl" />
+            <div className="w-40 h-40 bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-amber-600/20 rounded-full" />
           </div>
           <img 
             src="https://fenifisc.com/wp-content/uploads/2024/12/FENIFISC-OFICIAL.webp" 
             alt="FENIFISC Logo" 
-            className="relative w-36 h-36 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)] rounded-full border-3 border-amber-500/40 p-2 bg-gray-900/80 object-contain hover:scale-105 transition-transform duration-300" 
+            className="relative w-36 h-36 rounded-full border-3 border-amber-500/40 p-2 bg-gray-900/80 object-contain" 
             loading="lazy"
             decoding="async"
             width="144"
@@ -350,12 +350,12 @@ export default function App() {
       {/* Main Content */}
       <main className="relative max-w-4xl mx-auto px-4 pb-20">
         
-        {/* Progress Bar */}
-        <div className="mb-10 flex justify-between items-center bg-gray-900/50 backdrop-blur-xl p-4 rounded-2xl border border-gray-800">
+        {/* Progress Bar - Simplificado para Safari */}
+        <div className="mb-10 flex justify-between items-center bg-gray-900/50 p-4 rounded-2xl border border-gray-800">
           {PASOS.map((p, i) => (
             <div key={i} className="flex flex-col items-center flex-1 relative">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                i <= step ? "bg-amber-500 text-black shadow-lg shadow-amber-500/20 scale-110" : "bg-gray-800 text-gray-500"
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                i <= step ? "bg-amber-500 text-black" : "bg-gray-800 text-gray-500"
               }`}>
                 {i < step ? <CheckCircle className="w-6 h-6" /> : p.icon}
               </div>
@@ -371,12 +371,12 @@ export default function App() {
           ))}
         </div>
 
-        {/* Step Container */}
-        <div className="bg-gray-900/80 backdrop-blur-xl border border-gray-800 rounded-[2rem] p-6 md:p-10 shadow-2xl">
+        {/* Step Container - Simplificado para Safari */}
+        <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 md:p-10">
           
           {/* STEP 0: PERSONAL */}
           {step === 0 && (
-            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div>
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <User className="text-amber-500" /> Información Personal
               </h2>
