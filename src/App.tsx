@@ -290,7 +290,7 @@ export default function App() {
            </div>
           <h2 className="text-3xl font-bold text-white mb-2">¡Inscripción Exitosa!</h2>
           <p className="text-gray-400 mb-8">
-            Tu registro para el Campeonato Regional Matagalpa 2026 ha sido procesado. Te esperamos el 12 de Abril.
+            Tu registro para el Campeonato Regional Matagalpa 2026 ha sido procesado. Te esperamos el sábado 11 de Abril.
           </p>
           <button 
             onClick={() => window.location.reload()}
